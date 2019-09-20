@@ -27,11 +27,11 @@ def eea(a, b):
 
 def calculateKey():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect(("crypto.hso-hacker.space", 10004))
-    data = s.recv(1024).decode("utf-8")
+    s.connect(('crypto.hso-hacker.space', 10004))
+    data = s.recv(1024).decode('utf-8')
 
     # Look for the module N and the public key value of e.
-    rsaParameters = re.findall(r"[0-9]+", data)
+    rsaParameters = re.findall(r'[0-9]+', data)
 
     N = int(rsaParameters[0])
     e = int(rsaParameters[1])
@@ -49,7 +49,7 @@ def calculateKey():
     d = eea(phiN, e)[0]
 
     s.send(str(d).encode())
-    data = s.recv(1024).decode("utf-8")
+    data = s.recv(1024).decode('utf-8')
     print(data)
 
 
