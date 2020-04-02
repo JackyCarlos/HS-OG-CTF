@@ -1,7 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import socket
 import re
-
 
 def factorize(N):
     i = 2
@@ -9,7 +10,6 @@ def factorize(N):
     while N % i != 0:
         i += 1
     return i
-
 
 # recursive implementation of the extended euclidean algorithm. This calculates the greatest common divisor of
 # the two parameters in order to compute the modular inverse of b.
@@ -23,7 +23,6 @@ def eea(a, b):
     gcd = values[1]
 
     return [(gcd - a * t) // b, gcd]
-
 
 def calculateKey():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -51,7 +50,6 @@ def calculateKey():
     s.send(str(d).encode())
     data = s.recv(1024).decode('utf-8')
     print(data)
-
 
 if __name__ == '__main__':
     calculateKey()
