@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def guess():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect(('programming.hso-hacker.space', 9001))
@@ -22,10 +24,7 @@ def guess():
                 break
 
     print(result)
-    
-    
+
 if __name__ == "__main__":
     guess()
   
-
-

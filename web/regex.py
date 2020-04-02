@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
+
 import re
 import requests
-
 
 def regexEmails(data):
     words = data.split(" ")
@@ -20,7 +21,6 @@ def regexEmails(data):
 
     return concatenateAdresses[:-1]
 
-
 def main():
     session = requests.session()
     words = session.get('https://web.hso-hacker.space/regex/').text
@@ -33,7 +33,6 @@ def main():
 
     flag = re.findall(r'flag_[0-9a-f]{40}_', post.text)
     print(flag[0])
-
 
 if __name__ == '__main__':
     main()

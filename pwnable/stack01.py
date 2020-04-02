@@ -1,7 +1,8 @@
+#!/usr/bin/env python3
+
 import socket
 import struct
 import time
-
 
 def stack01():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -16,7 +17,6 @@ def stack01():
     data = s.recv(1024).decode('utf-8')
 
     print(data)
-
 
 if __name__ == '__main__':
     stack01()

@@ -1,12 +1,12 @@
+#!/usr/bin/env python3
+
 import requests
 import re
 import base64
 import os
 
-
 def crackCaptcha():
     pass
-
 
 def solveCaptchas():
     session = requests.session()
@@ -28,7 +28,6 @@ def solveCaptchas():
         f.write(pngBinary)
 
     session.close()
-
 
 if __name__ == '__main__':
     solveCaptchas()

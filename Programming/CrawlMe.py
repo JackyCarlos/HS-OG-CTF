@@ -1,8 +1,8 @@
+#!/usr/bin/env python3
 
 import hashlib
 import requests
 import re
-
 
 def hashFiles():
     filesToHash = crawlWebsite("http://hso-hacker.space:7789/files/")
@@ -30,11 +30,9 @@ def hashFiles():
     poster = sess.post("http://hso-hacker.space:7789/", data={"shasumall": m.hexdigest(), "submit": "Submit"})
     print(poster.text)
 
-
 def getNumber(elem):
     words = elem.split(" ")
     return words[0]
-
 
 def crawlWebsite(url):
     sess = requests.session()
@@ -63,7 +61,6 @@ def crawlWebsite(url):
         resultString.extend(nextDirectory)
 
     return resultString
-
 
 if __name__ == '__main__':
     hashFiles()

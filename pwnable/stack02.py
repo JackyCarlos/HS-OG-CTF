@@ -1,5 +1,6 @@
-from pwn import *
+#!/usr/bin/env python3
 
+from pwn import *
 
 def stack02():
     # r = process('/home/was_4/Downloads/stack02')
@@ -18,7 +19,6 @@ def stack02():
 
     r.sendline(payload)
     r.interactive()
-
 
 if __name__ == '__main__':
     stack02()
